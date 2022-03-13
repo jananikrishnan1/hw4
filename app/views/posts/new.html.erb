@@ -15,8 +15,14 @@
       <%= form.date_field "posted_on" %>
     </p>
     <p>
+      <%= form.label "uploaded_image" %>
+      <%= form.file_field "uploaded_image", accept: "image/png,image/jpg,image/jpeg" %>
+    </p>
+    <p>
       <%= form.submit %>
     </p>
     <%= form.hidden_field "place_id" %>
   <% end %>
+<% else %>
+  You must first <a href="/sessions/new">login</a> to post.
 <% end %>

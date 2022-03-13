@@ -23,7 +23,7 @@
         <div class="col">
           <p>
             <% if @current_user %>
-              <a>Logged in as: </a><%= @current_user.username %> | <a> <%= button_to "Logout", "/sessions/logout", method: :delete %> </a>
+              <a>Logged in as: </a><%= @current_user.username %> | <a><%= button_to "Logout", "/sessions/logout", method: :delete %> </a>
             <% else %>
               <a href="/sessions/new">Login</a> | <a href="/users/new">Signup</a>
             <% end %>
