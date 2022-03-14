@@ -12,17 +12,18 @@ class SessionsController < ApplicationController
         flash[:notice] = "Welcome, #{@user.username}."
         redirect_to "/places"
       else
-        flash[:notice] = "Nope"
+        flash[:notice] = "Wrong username or password"
         redirect_to "/sessions/new"
       end
     else
-      flash[:notice] = "Nope"
+      flash[:notice] = "Wrong username or password"
       redirect_to "/sessions/new"
     end
   end
 
   def destroy
     session[:user_id] = nil
+    flash[:notice] = "Logged out"
     redirect_to "/sessions/new"
   end
 end
